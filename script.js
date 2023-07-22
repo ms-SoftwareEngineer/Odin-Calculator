@@ -3,7 +3,7 @@ let original = true;
 controller.addEventListener('click',(e)=>{
     if(original){
         e.target.style.justifyContent = "flex-end";
-        e.target.style.backgroundColor = "silver";
+        e.target.style.backgroundColor = "springgreen";
     }else{
         e.target.style.justifyContent = "flex-start";
         e.target.style.backgroundColor = "";
