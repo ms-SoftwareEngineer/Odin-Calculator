@@ -102,3 +102,57 @@ body{
     margin-left: 0.2rem;
 }
 
+.calculator{
+    display: grid;
+    grid-template-columns: 2.5rem 2.5rem 2.5rem 4rem 3rem;
+    margin-top: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.calculator div{
+    border-radius: 0.4rem;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    text-align: center;
+    box-shadow: 2px 2px 2px 2px rgb(15, 15, 12);
+}
+
+.zero{
+    grid-column: 1/3;
+}
+
+.answer{
+    grid-column: 4/6;
+}
+
+.number{
+    border: 2px solid rgb(36, 39, 40);
+}
+
+.operator{
+    border: 2px solid rgb(118, 117, 117);
+}
+
+.decimal{
+    border: 2px solid rgb(114, 113, 109);
+}
+
+.answer{
+    border: 2px solid rgba(139, 153, 165, 0.615);
+}
+
+.clear{
+    border: 2px solid rgb(223, 27, 66);
+    color: rgb(176, 6, 6);
+    background-color: rgb(78, 22, 10);
+    font-weight: bold;
+}
+
+.delete{
+    border: 2px solid rgb(213, 34, 34);
+    color: rgb(194, 7, 7);
+    background-color: rgb(78, 22, 10);
+    font-weight: bold;
+}
