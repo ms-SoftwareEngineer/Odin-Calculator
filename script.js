@@ -9,7 +9,8 @@ const buttons = document.querySelectorAll('.calculator div');
 
 function addContents(e){
     let clickedContent = e.target.innerText;
-    if(clickedContent !== 'DEL' && clickedContent !== 'AC' && clickedContent !== '='){
+    if(clickedContent !== 'DEL' && clickedContent !== 'AC' && clickedContent !== '=' 
+    && clickedContent !== '.'){
         operations.innerText += clickedContent;
     }
     display.insertBefore(operations,result);
@@ -74,6 +75,11 @@ function clearContents(){
     operations.innerText = '';
 }
 
+function addOnceDecimal(e){
+    operations.innerText += e.target.textContent;
+    e.target.style.pointerEvents = 'none';
+}
+
 controller.addEventListener('click',(e)=>{
     if(original){
         e.target.style.justifyContent = "flex-end";
@@ -111,3 +117,6 @@ answer.addEventListener('click',displayContents);
 
 const clear = document.querySelector('.clear');
 clear.addEventListener('click',clearContents);
+
+const decimal = document.querySelector('.decimal');
+decimal.addEventListener('click',addOnceDecimal);
