@@ -7,6 +7,7 @@
 html{
     height: fill-available;
     height: -webkit-fill-available;
+    user-select: none;
 }
 
 body{
@@ -78,7 +79,46 @@ body{
     height: 6rem;
     border-radius: 0.8rem;
     border: 0.5rem solid rgb(65, 65, 69);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    overflow: auto;
+    padding: 0.5rem;
 }
+
+.operations, .result {
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+    width: 100%;
+    height: 3rem;
+    font-family: 'Orbitron', sans-serif;
+    overflow-x: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.result {
+    font-size: 25px;
+    justify-content: flex-start;
+}
+
+.operations::-webkit-scrollbar,.result::-webkit-scrollbar{
+    width: 0.2rem;
+    height: 0.2rem;
+}
+
+.operations::-webkit-scrollbar-thumb,.result::-webkit-scrollbar-thumb{
+    background-color: whitesmoke;
+}
+
+.operations::-webkit-scrollbar-track,.result::-webkit-scrollbar-track{
+    background-color: black;
+}
+
+
 
 .controller{
     width: 5.1rem;
@@ -100,6 +140,7 @@ body{
     border-radius: 20rem;
     background-color: white;
     margin-left: 0.2rem;
+    pointer-events: none;
 }
 
 .calculator{
