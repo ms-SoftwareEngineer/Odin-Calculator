@@ -6,6 +6,8 @@ const operations = document.createElement('div');
 operations.classList.add('operations');
 let original = true;
 const buttons = document.querySelectorAll('.calculator div');
+const decimal = document.querySelector('.decimal');
+const answer = document.querySelector('.answer');
 
 function addContents(e){
     let clickedContent = e.target.innerText;
@@ -67,7 +69,7 @@ function displayContents(){
         let d = calculate(copy.shift(),copy.shift(),copy.shift());
         copy.unshift(d);
     };
-    if(operations.innerText !== '') result.innerText = copy.join('');
+    result.innerText = copy.join('');
 }
 
 function clearContents(){
@@ -75,8 +77,8 @@ function clearContents(){
     operations.innerText = '';
 }
 
-function addOnceDecimal(e){
-    operations.innerText += e.target.textContent;
+function addOnceDecimal(){
+    operations.innerText += '.';
     e.target.style.pointerEvents = 'none';
 }
 
@@ -91,6 +93,8 @@ controller.addEventListener('click',(e)=>{
             button.style.pointerEvents = ''
             button.addEventListener('click',addContents,true)
         })
+        answer.addEventListener('click',displayContents,true);
+        decimal.addEventListener('click',addOnceDecimal,true);
     }else{
         e.target.style.justifyContent = "flex-start";
         e.target.style.backgroundColor = "";
@@ -99,7 +103,9 @@ controller.addEventListener('click',(e)=>{
         buttons.forEach((button) => {
             button.style.cursor = '';
             button.removeEventListener('click',addContents,true)
-        })
+        });
+        answer.removeEventListener('click',displayContents,true);
+        decimal.removeEventListener('click',addOnceDecimal,true);
         setTimeout( () =>{
             result.innerText = ''
         },
@@ -108,15 +114,9 @@ controller.addEventListener('click',(e)=>{
     }
     original = !original
 })
-
 const deletion = document.querySelector('.delete');
 deletion.addEventListener('click',deleteContent);
-
-const answer = document.querySelector('.answer');
-answer.addEventListener('click',displayContents);
 
 const clear = document.querySelector('.clear');
 clear.addEventListener('click',clearContents);
 
-const decimal = document.querySelector('.decimal');
-decimal.addEventListener('click',addOnceDecimal);
