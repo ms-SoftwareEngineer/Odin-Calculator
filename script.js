@@ -94,7 +94,7 @@ controller.addEventListener('click',(e)=>{
     }else{
         e.target.style.justifyContent = "flex-start";
         e.target.style.backgroundColor = "";
-        result.innerText = "CASINO";
+        result.innerText = "CASIO";
         operations.innerText = '';
         buttons.forEach((button) => {
             button.style.cursor = '';
