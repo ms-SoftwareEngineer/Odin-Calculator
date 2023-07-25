@@ -67,7 +67,7 @@ function displayContents(){
         let d = calculate(copy.shift(),copy.shift(),copy.shift());
         copy.unshift(d);
     };
-    result.innerText = copy.join('');
+    if(operations.innerText !== '') result.innerText = copy.join('');
 }
 
 function clearContents(){
